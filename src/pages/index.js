@@ -11,6 +11,9 @@ query PostList {
   allMarkdownRemark {
     edges {
       node {
+        fields {
+          slug
+        }
         frontmatter {
           background
           category
@@ -32,11 +35,12 @@ query PostList {
     {postList.map(({
       node: { 
       frontmatter: { background, category, date, description, title },
-      timeToRead
+      timeToRead,
+      fields: { slug }
       },
       }) => (
         <PostItem
-        slug='/about/'
+        slug={slug}
         background={background}
         category={category}
         date={date}
