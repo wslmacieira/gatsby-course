@@ -20,3 +20,5 @@ const links = [
         url: 'https://unsplash.com'
     }
 ]
+
+export default links
